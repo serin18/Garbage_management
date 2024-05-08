@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'public/css/Payment.css' %}" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+    
+    <section>
+        {% for i in det %}
+        <div class="invoice">
+          <div class="top_line"></div>
+          <div class="header">
+            <div class="i_row">
+              <div class="i_logo">
+                <p>Garbage Management</p>
+              </div>
+              <div class="i_title">
+                <h2>INVOICE</h2>
+                <p class="p_title text_right">
+                  
+                </p>
+              </div>
+            </div>
+            <div class="i_row">
+              <div class="i_number">
+                <p class="p_title">INVOICE NO: {{i.id}}</p>
+              </div>
+              <div class="i_address text_right">
+                <p>TO</p>
+                <p class="p_title">
+                  {{request.user}} <br />
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="i_table">
+              <div class="i_table_head">
+                <div class="i_row">
+                  <div class="i_col w_15">
+                    <p class="p_title">QTY</p>
+                  </div>
+                  <div class="i_col w_55">
+                    <p class="p_title">DESCRIPTION</p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p class="p_title">PRICE</p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p class="p_title">TOTAL</p>
+                  </div>
+                </div>
+              </div>
+              <div class="i_table_body">
+                <div class="i_row">
+                  <div class="i_col w_15">
+                    <p>1</p>
+                  </div>
+                  <div class="i_col w_55">
+                    <p>{{i.name}}</p>
+                
+                  </div>
+                  <div class="i_col w_15">
+                    <p>{{i.price}}</p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p>{{i.price}}</p>
+                  </div>
+                </div>
+                
+                <div class="i_row">
+                  <div class="i_col w_15">
+                    <p></p>
+                  </div>
+                  <div class="i_col w_55">
+                    <p></p>
+                    <span></span>
+                  </div>
+                  <div class="i_col w_15">
+                    <p></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              <div class="i_table_foot">
+                <div class="i_row">
+                  <div class="i_col w_15">
+                    <p></p>
+                  </div>
+                  <div class="i_col w_55">
+                    <p></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p>Sub Total</p>
+                    <p>{{i.price}}</p>
+                  </div>
+                  
+                </div>
+                <div class="i_row grand_total_wrap">
+                  <div class="i_col w_50">
+                  </div>
+                  <div class="i_col w_50 grand_total">
+                    <p><span>GRAND TOTAL:</span>
+                      <span>{{i.price}}</span>
+                    </p>
+                  </div>
+                
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="i_row">
+              <div class="i_col w_50">
+                <p class="p_title">Payment Method</p>
+                <p>you can choose pay the invoice through online or through off line.If you pay bill through online please keep the reciept till the collection </p>
+              </div>
+              <div class="i_col w_50 text_right">
+                <p class="p_title">Terms and Conditions</p>
+                <p>By proceeding with an online payment, you authorize to initiate a transaction to debit your chosen payment method for the total amount specified in your order..</p>
+              </div>
+            </div>
+          </div>
+          <div class="bottom_line"></div>
+        </div>
+        {% endfor %}
+      </section>
+      
+</body>
+</html>

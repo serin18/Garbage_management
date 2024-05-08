@@ -1,0 +1,129 @@
+{% load static %}
+
+<span style="font-family: verdana, geneva, sans-serif;">
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard | By Code Info</title>
+    <link rel="stylesheet" href="{%static 'public/css/style.css' %}" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="#">Garbage Management</a>
+        
+      </div>
+
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <div class="account">
+          
+          <h4>{{request.user}}</h4>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <nav>
+        <div class="side_navbar">
+          <span>Main Menu</span>
+          <a href="#" class="active">HOME</a>
+          <a href="{% url 'bin' %}">BINS</a>
+          <a href="{% url 'requests' %}">MY BINS</a>
+          <a href="{% url 'send_complaint' %}">RAISE COMPLAINT</a>
+          <a href="{% url 'list_complaints' %}">MY COMPLAINTS</a>
+          <a href="{% url 'collection_request_detail' request.user.id  %}">COLLECTION DATE </a>
+          <a href="{% url 'history'%}"> HISTORY </a>
+
+          <div class="links">
+            <span>Quick Link</span>
+            
+            <a href="{% url 'lgout' %}">Logout</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main-body">
+        <h2>HOME PAGE</h2>
+        <div class="promo_card">
+          <h1>Hi {{request.user}} Welcome to clean world</h1>
+          <span>Now clean world in your hands</span>
+          <a href="{% url 'bin' %}"><button>explore our servicess</button></a>
+        </div>
+
+        <div class="history_lists">
+          <div class="list1">
+            <div class="row">
+              <h4>About</h4>
+              
+            </div>
+            <div class="history_card card">
+              <div class="card-header">
+                <h4>hello {{request.user}}</h4>
+                <p>Our online garbage management system offers a comprehensive solution to efficiently handle waste management processes. By leveraging digital technologies, it revolutionizes traditional waste management practices, promoting sustainability, efficiency, and environmental conservation.
+                  An effective garbage management system online refers to a digital platform or software solution designed to streamline and optimize the process of waste collection, sorting, recycling, and disposal. Here's a comprehensive description of such a system</p>
+                
+              </div>
+              <div class="card-body">
+                <!-- First table content -->
+                <!-- Second table content -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <h4>Our Servicess</h4>
+
+        <div class="balance">
+          
+          <div class="info">
+            <h5> Gaebage bins</h5>
+            <span>provide garbage bins for customers</span>
+          </div>
+        </div>
+
+        <div class="balance">
+          
+          <div class="info">
+            <h5>Waste Collection</h5>
+            <span>We will collect waste from your location</span>
+          </div>
+        </div>
+
+        <div class="balance">
+          
+          <div class="info">
+            <h5>Waste Management</h5>
+            <span>We will manage waste effectively</span>
+          </div>
+        </div>
+
+        <div class="balance">
+        
+          <div class="info">
+            <h5>Customer Service</h5>
+            <span>If you have any complaints we will clear immediatly</span>
+          </div>
+        </div>
+
+        <div class="balance">
+          
+          <div class="info">
+            <h5>Others</h5>
+            <span>we provide other social servicess</span>
+           
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+  </html>
+</span>

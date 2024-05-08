@@ -1,0 +1,107 @@
+{% load static %}
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Attendance Dashboard | By Code Info</title>
+      <link rel="stylesheet" href="{% static 'css/driver/style.css' %}" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    </head>
+    <body>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="#" class="logo">
+              <!-- <img src="./pic/logo.jpg"> -->
+              <span class="nav-item">Hello {{request.user}}</span>
+            </a></li>
+            <li><a href="#">
+              <i class="fas fa-menorah"></i>
+              <span class="nav-item">Dashboard</span>
+            </a></li>
+            <li><a href="{% url 'rqst' %}">
+              <i class="fas fa-comment"></i>
+              <span class="nav-item">COLLECTION DATE</span>
+            </a></li>
+            <li><a href="{% url 'conform' %}">
+              <i class="fas fa-chart-bar"></i>
+              <span class="nav-item">WORKS</span>
+            </a></li>
+            <li><a href="{% url 'work' %}">
+              <i class="fas fa-chart-bar"></i>
+              <span class="nav-item">DAILY UPDATE</span>
+            </a></li>
+            <li><a href="{% url 'complete' %}">
+              <i class="fas fa-chart-bar"></i>
+              <span class="nav-item">COMPLTED</span>
+            </a></li>
+    
+            <li><a href="{% url 'lgout'%}" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a></li>
+          </ul>
+        </nav>
+    
+    
+        <section class="main">
+          <div class="main-top">
+            <h1>Day to Day update</h1>
+            <i class="fas fa-user-cog"></i>
+          </div>
+          <div class="users">
+            <div class="card">
+              <!-- <img src="./pic/img1.jpg"> -->
+              <h4 >SEND COLLECTION DATE</h4>
+              <br>
+              <h5>make sure that you duty is going correctly</h5>
+              <br>
+              <p>you can send the date of collection with respective bins in a spesific area with a date  </p>
+              
+              <button><a href="{% url 'rqst' %}">ADD NEW WORKS</a></button>
+            </div>
+            <div class="card">
+              <h4>DAILY WORKS</h4>
+              <br>
+              <h5>This is your daily work update</h5>
+              <br>
+              <p> you must update when complete each works in a day </p> 
+              <br>            
+               <div class="per">
+                </table>
+              </div>
+              <button><a href="{% url 'conform' %}">DAILY COLLECTION</a></button>
+            </div>
+            <div class="card">
+              <h4>WORK UPDATES</h4>
+              <br>
+              <h5>This is your daily work update</h5>
+              <br>
+              <p> here you want give updates about your root and overall report </p>        
+               <div class="per">
+                </table>
+              </div>
+              <button><a href="{% url 'work' %}">DALIY UPDATE</a></button>
+            </div>
+            <div class="card">
+              <h4>COMPLETED WORKS</h4>
+              <br>
+              <h5>This is your daily work update</h5>
+              <br>
+              <p> here you can see the list of garbage collected </p>   
+              <br>    
+               <div class="per">
+                </table>
+              </div>
+              <button><a href="{% url 'complete' %}">COMPLETED LIST</a></button>
+            </div>
+          </section>
+          
+        </section>
+        
+      </div>
+    
+    </body>
+    </html>
+    </span>
